@@ -5,17 +5,17 @@ mod utils;
 mod rig;
 mod executor;
 
-use agents::saichs::Saichs;
+use agents::vanguards::vanguards;
 use rig::RigFramework;
 use executor::Executor;
 
 #[tokio::main]
 async fn main() {
     let rig = RigFramework::new();
-    let saichs = Saichs::new(&rig);
-    let executor = Executor::new(saichs);
+    let vanguards = vanguards::new(&rig);
+    let executor = Executor::new(vanguards);
     
-    println!("Goldman SAIchs AI Agent Framework initialized.");
+    println!("Goldman vanguards AI Agent Framework initialized.");
     executor.run().await;
 }
 
@@ -82,7 +82,7 @@ impl ComponentManager {
 
 // src/agents/mod.rs
 pub mod agent;
-pub mod saichs;
+pub mod vanguards;
 pub mod researcher;
 pub mod writer;
 
@@ -98,33 +98,33 @@ pub trait Agent {
     fn initialize(&mut self, rig: &RigFramework);
 }
 
-// src/agents/saichs.rs
+// src/agents/vanguards.rs
 use super::agent::Agent;
 use async_trait::async_trait;
 use crate::models::ApiError;
 use crate::rig::RigFramework;
 
-pub struct Saichs {
+pub struct vanguards {
     rig: Option<RigFramework>,
 }
 
-impl Saichs {
+impl vanguards {
     pub fn new(rig: &RigFramework) -> Self {
-        let mut saichs = Self { rig: None };
-        saichs.initialize(rig);
-        saichs
+        let mut vanguards = Self { rig: None };
+        vanguards.initialize(rig);
+        vanguards
     }
 }
 
 #[async_trait]
-impl Agent for Saichs {
+impl Agent for vanguards {
     fn name(&self) -> String {
-        "$Saichs".to_string()
+        "$vanguards".to_string()
     }
 
     async fn prompt(&self, input: &str) -> Result<String, ApiError> {
-        // Implementation for $Saichs agent
-        Ok("$Saichs response".to_string())
+        // Implementation for $vanguards agent
+        Ok("$vanguards response".to_string())
     }
 
     fn initialize(&mut self, rig: &RigFramework) {
