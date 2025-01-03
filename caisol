@@ -11,20 +11,20 @@ use solana_program::{
 use borsh::{BorshDeserialize, BorshSerialize};
 
 // Define the program ID
-solana_program::declare_id!("nekoAIProgramIDXXXXXXXXXXXXXXXXXXXXXXX");
+solana_program::declare_id!("caiAIProgramIDXXXXXXXXXXXXXXXXXXXXXXX");
 
 #[derive(BorshSerialize, BorshDeserialize, Debug)]
-pub struct nekoAIState {
-    pub total_nekos: u64,
-    pub last_neko_timestamp: i64,
+pub struct caiAIState {
+    pub total_cais: u64,
+    pub last_cai_timestamp: i64,
 }
 
 #[derive(BorshSerialize, BorshDeserialize, Debug)]
-pub enum nekoAIInstruction {
+pub enum caiAIInstruction {
     Initialize,
     AnalyzeMarket,
     GenerateInsights,
-    Distributenekos { amount: u64 },
+    Distributecais { amount: u64 },
 }
 
 entrypoint!(process_instruction);
@@ -34,14 +34,14 @@ pub fn process_instruction(
     accounts: &[AccountInfo],
     instruction_data: &[u8],
 ) -> ProgramResult {
-    let instruction = nekoAIInstruction::try_from_slice(instruction_data)
+    let instruction = caiAIInstruction::try_from_slice(instruction_data)
         .map_err(|_| ProgramError::InvalidInstructionData)?;
 
     match instruction {
-        nekoAIInstruction::Initialize => initialize(program_id, accounts),
-        nekoAIInstruction::AnalyzeMarket => analyze_market(accounts),
-        nekoAIInstruction::GenerateInsights => generate_insights(accounts),
-        nekoAIInstruction::Distributenekos { amount } => distribute_nekos(accounts, amount),
+        caiAIInstruction::Initialize => initialize(program_id, accounts),
+        caiAIInstruction::AnalyzeMarket => analyze_market(accounts),
+        caiAIInstruction::GenerateInsights => generate_insights(accounts),
+        caiAIInstruction::Distributecais { amount } => distribute_cais(accounts, amount),
     }
 }
 
@@ -53,52 +53,52 @@ fn initialize(program_id: &Pubkey, accounts: &[AccountInfo]) -> ProgramResult {
         return Err(ProgramError::IncorrectProgramId);
     }
 
-    let mut state = nekoAIState {
-        total_nekos: 0,
-        last_neko_timestamp: 0,
+    let mut state = caiAIState {
+        total_cais: 0,
+        last_cai_timestamp: 0,
     };
 
     state.serialize(&mut &mut state_account.data.borrow_mut()[..])?;
 
-    msg!("nekoAI: Initialized state account");
+    msg!("caiAI: Initialized state account");
     Ok(())
 }
 
 fn analyze_market(accounts: &[AccountInfo]) -> ProgramResult {
     // Implement market analysis logic here
     // This could involve fetching price data from oracles, analyzing on-chain metrics, etc.
-    msg!("nekoAI: Analyzing market trends...");
+    msg!("caiAI: Analyzing market trends...");
     Ok(())
 }
 
 fn generate_insights(accounts: &[AccountInfo]) -> ProgramResult {
     // Implement insight generation logic here
     // This could involve processing the analyzed data and creating actionable insights
-    msg!("nekoAI: Generating personalized insights...");
+    msg!("caiAI: Generating personalized insights...");
     Ok(())
 }
 
-fn distribute_nekos(accounts: &[AccountInfo], amount: u64) -> ProgramResult {
+fn distribute_cais(accounts: &[AccountInfo], amount: u64) -> ProgramResult {
     let account_info_iter = &mut accounts.iter();
     let state_account = next_account_info(account_info_iter)?;
     let token_program = next_account_info(account_info_iter)?;
     let clock = Clock::get()?;
 
-    let mut state = nekoAIState::try_from_slice(&state_account.data.borrow())?;
+    let mut state = caiAIState::try_from_slice(&state_account.data.borrow())?;
 
-    // Check if enough time has passed since the last neko
-    if clock.unix_timestamp - state.last_neko_timestamp < 86400 {
+    // Check if enough time has passed since the last cai
+    if clock.unix_timestamp - state.last_cai_timestamp < 86400 {
         return Err(ProgramError::Custom(1)); // Custom error for time restriction
     }
 
     // Update state
-    state.total_nekos += amount;
-    state.last_neko_timestamp = clock.unix_timestamp;
+    state.total_cais += amount;
+    state.last_cai_timestamp = clock.unix_timestamp;
     state.serialize(&mut &mut state_account.data.borrow_mut()[..])?;
 
     // Implement token transfer logic here
     // This would involve calling the Token program to transfer tokens to holders
-    msg!("nekoAI: Distributing {} nekos to token holders", amount);
+    msg!("caiAI: Distributing {} cais to token holders", amount);
 
     Ok(())
 }
