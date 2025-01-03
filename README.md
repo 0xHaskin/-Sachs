@@ -1,55 +1,47 @@
-# NekoAI: Technical Architecture Overview
+# CreditAI Technical Documentation
 
-![nekomid](https://github.com/user-attachments/assets/570932f8-11c2-4374-93c7-40fb9a7c4217)
+![caii](https://github.com/user-attachments/assets/ae417491-e902-4af7-a8bf-0c20a7756b9a)
 
-## Autonomous Operation
+## Overview
+CreditAI is a sophisticated platform that synergizes artificial intelligence (AI) with blockchain technology to facilitate decentralized access to high-performance computational resources. The architecture is predicated on the deployment of autonomous AI agents that optimize the allocation and utilization of GPU/TPU resources, thereby enabling users to execute complex computational tasks with enhanced efficiency.
 
-NekoAI is engineered for full autonomy in user interaction and reward distribution, leveraging advanced AI methodologies. The core functionalities include:
+## AI Agent Architecture
 
-### Real-time Interaction Processing
+### Multi-Agent System (MAS)
+At the nucleus of CreditAI's infrastructure lies a multi-agent system (MAS), wherein specialized AI agents are instantiated to perform discrete functions related to resource management, demand forecasting, and task execution. This architectural paradigm allows for concurrent processing, significantly augmenting the overall throughput and responsiveness of the platform.
 
-- **Natural Language Processing (NLP)**: NekoAI employs state-of-the-art NLP techniques, including transformer-based architectures (e.g., BERT, GPT-3) for semantic understanding and context extraction. This allows for:
-  - **Tokenization**: Utilizing subword tokenization (e.g., Byte Pair Encoding) to break down user input into manageable units while preserving semantic meaning.
-  - **Entity Recognition**: Implementing Named Entity Recognition (NER) using Conditional Random Fields (CRFs) and deep learning models to identify and classify key components of user messages.
-  - **Contextual Embeddings**: Leveraging contextual embeddings from transformer models to capture nuanced meanings of words based on their surrounding context in conversation.
+### Functions of AI Agents
+- **Demand Monitoring**: AI agents engage in continuous telemetry of real-time demand signals for computational resources. They employ statistical methods and predictive analytics to discern usage patterns and anticipate future requirements, thereby ensuring optimal resource allocation.
 
-### Token Management
+- **Resource Allocation**: Upon assessing the demand landscape, agents dynamically allocate GPU/TPU resources to various computational tasks. They utilize heuristic algorithms to evaluate task requirements and judiciously distribute resources, minimizing contention and maximizing throughput.
 
-- **Autonomous Wallet Control**: NekoAI utilizes a decentralized wallet management system, implementing:
-  - **Smart Contracts**: Developed in Rust or Solidity, these contracts govern token distribution logic, ensuring secure and transparent transactions through mechanisms such as:
-    - **Multi-signature Transactions**: Requiring multiple approvals for high-value transfers to enhance security.
-  - **Automated Airdrop Mechanisms**: Functions that trigger periodic token distributions based on engagement metrics, utilizing event-driven programming paradigms.
+- **Task Execution**: Following resource allocation, AI agents are responsible for executing the assigned computational tasks. They leverage their allocated resources to perform operations efficiently, adhering to defined service level agreements (SLAs).
 
-## AI Technologies
+## Tokenomics
 
-### Natural Language Understanding (NLU)
+### CAI Token
+The CAI token serves as the native cryptocurrency within the CreditAI ecosystem, representing discrete units of computational power. It functions as the transactional medium for resource access within the platform. Users are enabled to acquire CAI tokens for on-demand access to GPU/TPU resources, fostering a flexible and scalable computational environment.
 
-- NekoAI utilizes advanced NLU frameworks to interpret user commands with high accuracy. Key components include:
-  - **Intent Recognition**: Implementing deep learning classifiers (e.g., LSTM, CNN) trained on annotated datasets to classify user inputs into predefined categories (e.g., `/feed`, `/pet`).
-  - **Sentiment Analysis**: Employing ensemble methods combining lexicon-based approaches with machine learning classifiers (e.g., XGBoost) to gauge the emotional tone of user interactions.
+### Staking Mechanism
+Holders of CAI tokens can engage in a staking mechanism that permits them to accrue rewards commensurate with their contributions to the network's computational capacity. This staking paradigm not only incentivizes user participation but also enhances network resilience and resource availability through economic alignment.
 
-### Reinforcement Learning
+## Resource Pool Management
 
-- NekoAI incorporates reinforcement learning principles to optimize its interaction strategies:
-  - **Reward Mechanism**: Utilizing a reward shaping technique to assign rewards based on user engagement outcomes, allowing the model to learn effective communication tactics over time.
-  - **Policy Gradient Methods**: Implementing advanced algorithms such as Proximal Policy Optimization (PPO) and Actor-Critic methods to refine response generation based on feedback loops from user interactions.
+### Decentralized Resource Pool
+CreditAI operates a decentralized resource pool comprising an aggregation of GPU/TPU resources contributed by individual providers and strategic partnerships. This heterogeneous resource pool ensures robust computational capabilities while enabling contributors to monetize underutilized assets.
 
-### Dynamic Response Generation
+### Resource Allocation Strategy
+The resource allocation strategy is undergirded by AI agents that continuously assess real-time demand metrics and optimize resource distribution accordingly. By leveraging advanced algorithmic frameworks, CreditAI guarantees that users receive requisite computational power precisely when demanded.
 
-- Leveraging generative models, NekoAI can produce contextually relevant responses tailored to individual users:
-  - **Seq2Seq Architectures**: Utilizing attention mechanisms within encoder-decoder frameworks to generate coherent and context-aware replies.
-  - **Fine-Tuning Pre-trained Models**: Adapting models on domain-specific datasets using techniques such as transfer learning to enhance relevance and engagement.
+## Dynamic Allocation Algorithm
 
-### Anomaly Detection
+### Overview
+The dynamic allocation algorithm employs sophisticated machine learning models to predict demand trajectories for computational resources. This predictive capability facilitates proactive management of the resource pool, ensuring optimal utilization while minimizing latency.
 
-- Advanced anomaly detection algorithms monitor interactions for unusual patterns:
-  - **Statistical Methods**: Employing multivariate statistical techniques such as Principal Component Analysis (PCA) to identify outliers in interaction data.
-  - **Machine Learning Approaches**: Training unsupervised models like Isolation Forests and One-Class SVMs to detect potential abuse or manipulation in user interactions.
+### Key Features
+- **Real-Time Demand Forecasting**: The algorithm harnesses historical usage data alongside current operational trends to generate accurate demand forecasts, employing techniques such as time series analysis and regression modeling.
 
-## Security Measures
+- **Efficient Resource Distribution**: By anticipating demand fluctuations, the algorithm preemptively allocates resources, thereby reducing queuing delays for users and optimizing overall system performance metrics.
 
-### Anomaly Detection
-
-- Advanced anomaly detection algorithms monitor interactions for unusual patterns:
-  - **Statistical Methods**: Employing multivariate statistical techniques such as Principal Component Analysis (PCA) to identify outliers in interaction data.
-  - **Machine Learning Approaches**: Training unsupervised models like Isolation Forests and One-Class SVMs to detect potential abuse or manipulation in user interactions.
+## Conclusion
+CreditAI epitomizes a paradigm shift in the accessibility and utilization of computational resources within the digital economy. Through the integration of advanced AI agents into its architectural framework, CreditAI enhances operational efficiency while catalyzing innovation across diverse sectors. The platform's commitment to dynamic resource allocation ensures that users can effectively optimize their computational workflows, paving the
