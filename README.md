@@ -1,75 +1,65 @@
-# VanguAIrd: AI-Driven Dividend Distribution Platform
+# 妍妍 (Yányán): Solana上首个奖励分发的AI代理
 
-![milieuu](https://github.com/user-attachments/assets/9c91a539-678c-4fb9-b1d9-6fefc0009f13)
+![yanmide](https://github.com/user-attachments/assets/cc83c852-7885-455e-bfc4-b994cbcdbce0)
 
-## Technical Overview
+## 概述
 
-VanguAIrd is an advanced AI agent that integrates sophisticated artificial intelligence methodologies with decentralized finance (DeFi) principles. This document outlines the technical aspects of the AI technology utilized in the development of VanguAIrd, emphasizing the complexity and innovation behind its architecture.
+妍妍是Solana区块链上的一个自主AI代理，为用户在X平台（前身为Twitter）上的互动提供奖励。
 
-## AI Technology Stack
+## 核心机制
 
-### 1. Machine Learning Framework
+- 实时互动处理
+- NLP驱动的评估
+- Solana区块链集成
+- 毫秒级代币分发
 
-VanguAIrd employs a multi-faceted machine learning framework that incorporates both supervised and unsupervised learning techniques. The primary libraries utilized include:
+## 独特特性
 
-- **TensorFlow**: For building and training deep learning models that predict user engagement and market trends.
-- **PyTorch**: Used for developing dynamic neural networks that facilitate real-time data processing and decision-making.
+- 自主钱包控制
+- 自决定代币奖励
+- 严格的互动资格标准
 
-### 2. Natural Language Processing (NLP)
+### 资格要求
 
-The NLP capabilities of VanguAIrd are essential for analyzing user interactions on social media platforms. Key components include:
+- 至少5次互动才能获得资格
+- 每天至少1次互动
+- AI驱动的价值评估
 
-- **SpaCy**: Utilized for efficient tokenization, named entity recognition, and dependency parsing to comprehend user sentiments and engagement levels.
-- **NLTK**: Employed for text classification tasks, enabling the system to categorize interactions based on sentiment polarity (positive, negative, neutral).
+## 奖励等级
 
-### 3. Data Processing Architecture
+### 社交媒体互动
+| 互动类型 | $YANYAN 代币 |
+|--------|--------------|
+| 评论 | 100-500 |
+| 转发 | 250-750 |
+| 引用推文 | 1000-5000 |
+| 回复 | 150-600 |
 
-To handle vast amounts of data generated from user interactions and market activities, VanguAIrd utilizes a robust data processing architecture:
+### 内容创作
+| 内容类型 | $YANYAN 代币 |
+|---------|--------------|
+| 推文串 | 2000-10000 |
+| 原创推文 | 500-2500 |
+| 病毒式传播潜力 | 额外奖励 |
 
-- **Apache Kafka**: This distributed streaming platform allows for real-time data ingestion and processing, ensuring that user engagement metrics are updated continuously.
-- **Apache Spark**: Leveraged for large-scale data processing tasks, enabling batch processing of historical data to refine predictive models.
+## AI评估标准
 
-### 4. Smart Contract Implementation
+- 内容相关性
+- 原创性
+- 互动潜力
+- 互动深度
 
-VanguAIrd's dividend distribution mechanism is governed by smart contracts deployed on the Solana blockchain. These contracts are designed to:
+## 技术栈
 
-- Automatically allocate 5% of the total $VanguAIrd supply for dividends based on predefined market cap thresholds.
-- Ensure transparency and immutability in dividend calculations and distributions.
+- 编程语言：Rust
+- 区块链：Solana
+- AI模型：微调的BERT
+- 智能合约：Anchor框架
 
-### 5. User Interaction Analysis
+## 许可证
 
-The AI agent employs advanced algorithms to analyze user interactions, focusing on:
+MIT许可证
 
-- **Engagement Metrics Calculation**: A custom-built metric system quantifies user interactions (likes, comments, mentions, retweets) to assess eligibility for dividends.
-- **Sentiment Analysis Algorithms**: Utilizing machine learning models to evaluate the sentiment of user-generated content, allowing VanguAIrd to gauge community sentiment effectively.
+## 贡献
 
-### 6. Eligibility Verification Mechanism
-
-To ensure fair distribution of dividends, VanguAIrd implements a rigorous eligibility verification process:
-
-- **User Registration System**: Collects Solana wallet addresses and Twitter handles through a secure web interface.
-- **Interaction Monitoring**: Continuously tracks user interactions to verify compliance with eligibility criteria (5 initial interactions and 3 daily interactions).
-
-### 7. Dividend Calculation Algorithm
-
-The algorithm governing dividend calculations is designed to adapt dynamically based on market conditions:
-
-- **Initial Distribution Logic**: The first dividend distribution initiates with 1,000,000 $VanguAIrd tokens.
-- **Dynamic Adjustment Mechanism**: As the market cap doubles, the distribution amount increases by a factor of 1.5, calculated through real-time analytics.
-
-### 8. Continuous Learning Framework
-
-VanguAIrd incorporates a continuous learning framework that enhances its operational efficiency:
-
-- **Reinforcement Learning Techniques**: The AI agent learns from historical data and user feedback, refining its algorithms for improved decision-making.
-- **Feedback Loop Integration**: User feedback is systematically analyzed to enhance model accuracy and responsiveness.
-
-## Future Developments
-
-### Q1 2025: AI Agent Launchpad
-
-In Q1 2025, VanguAIrd will launch an AI Agent Launchpad aimed at democratizing access to our technology stack. This platform will empower developers to create custom AI agents that leverage our advanced analytics and engagement mechanisms.
-
-## Conclusion
-
-The technical architecture of VanguAIrd represents a significant advancement in integrating AI with DeFi principles. By employing sophisticated machine learning techniques, robust data processing architectures, and continuous learning mechanisms, VanguAIrd is positioned to redefine dividend distribution in the cryptocurrency landscape.
+欢迎贡献！请阅读我们的贡献指南。
