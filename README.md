@@ -1,47 +1,85 @@
-# CreditAI Technical Documentation
+# MarbleAI GitHub Repository
 
-![caii](https://github.com/user-attachments/assets/ae417491-e902-4af7-a8bf-0c20a7756b9a)
+![marblemid](https://github.com/user-attachments/assets/11ff587b-a6e3-4f9e-9646-5f61ebd0b0f0)
 
-## Overview
-CreditAI is a sophisticated platform that synergizes artificial intelligence (AI) with blockchain technology to facilitate decentralized access to high-performance computational resources. The architecture is predicated on the deployment of autonomous AI agents that optimize the allocation and utilization of GPU/TPU resources, thereby enabling users to execute complex computational tasks with enhanced efficiency.
+## Technical Overview
 
-## AI Agent Architecture
+MarbleAI is a decentralized finance (DeFi) platform built on the Solana blockchain, designed to leverage advanced artificial intelligence (AI) agents for yield optimization through a proprietary scoring system. This repository focuses on the technical architecture, AI methodologies, and algorithms that power MarbleAI's functionality.
 
-### Multi-Agent System (MAS)
-At the nucleus of CreditAI's infrastructure lies a multi-agent system (MAS), wherein specialized AI agents are instantiated to perform discrete functions related to resource management, demand forecasting, and task execution. This architectural paradigm allows for concurrent processing, significantly augmenting the overall throughput and responsiveness of the platform.
+## Architecture
 
-### Functions of AI Agents
-- **Demand Monitoring**: AI agents engage in continuous telemetry of real-time demand signals for computational resources. They employ statistical methods and predictive analytics to discern usage patterns and anticipate future requirements, thereby ensuring optimal resource allocation.
+### System Design
+MarbleAI employs a microservices architecture that enhances scalability and modularity. Key components include:
 
-- **Resource Allocation**: Upon assessing the demand landscape, agents dynamically allocate GPU/TPU resources to various computational tasks. They utilize heuristic algorithms to evaluate task requirements and judiciously distribute resources, minimizing contention and maximizing throughput.
+- **User Interface**: Developed using React.js, the UI allows users to configure investment parameters and monitor performance metrics in real-time.
+- **AI Agent Framework**: This core component houses multiple AI agents that perform asset analysis and yield optimization.
+- **Data Ingestion Pipeline**: A robust ETL (Extract, Transform, Load) pipeline built with Apache Kafka for real-time data streaming, ensuring timely updates from various data sources.
 
-- **Task Execution**: Following resource allocation, AI agents are responsible for executing the assigned computational tasks. They leverage their allocated resources to perform operations efficiently, adhering to defined service level agreements (SLAs).
+### Technology Stack
+- **Blockchain**: Utilizes Solana for high throughput and low-latency transactions.
+- **Backend**: Node.js with Express for RESTful API development; Python for AI model training and inference.
+- **Database**: PostgreSQL for structured data storage; Redis for caching and session management.
+- **Machine Learning Frameworks**: TensorFlow and PyTorch are employed for developing, training, and deploying machine learning models.
 
-## Tokenomics
+## AI Technology
 
-### CAI Token
-The CAI token serves as the native cryptocurrency within the CreditAI ecosystem, representing discrete units of computational power. It functions as the transactional medium for resource access within the platform. Users are enabled to acquire CAI tokens for on-demand access to GPU/TPU resources, fostering a flexible and scalable computational environment.
+### Pentheus AI Agent
+Pentheus is the primary AI agent responsible for real-time asset analysis and yield optimization. Key features include:
 
-### Staking Mechanism
-Holders of CAI tokens can engage in a staking mechanism that permits them to accrue rewards commensurate with their contributions to the network's computational capacity. This staking paradigm not only incentivizes user participation but also enhances network resilience and resource availability through economic alignment.
+- **Real-Time Data Processing**: Pentheus continuously ingests and processes data streams from multiple sources using Apache Kafka, enabling immediate analysis of market conditions.
 
-## Resource Pool Management
+- **Predictive Modeling**: Utilizes advanced regression techniques, including Long Short-Term Memory (LSTM) networks, to forecast potential yield opportunities based on extensive historical performance data. The model is trained on large datasets to enhance predictive accuracy.
 
-### Decentralized Resource Pool
-CreditAI operates a decentralized resource pool comprising an aggregation of GPU/TPU resources contributed by individual providers and strategic partnerships. This heterogeneous resource pool ensures robust computational capabilities while enabling contributors to monetize underutilized assets.
+  \[
+  h_t = \sigma(W_h \cdot h_{t-1} + W_x \cdot x_t + b)
+  \]
 
-### Resource Allocation Strategy
-The resource allocation strategy is undergirded by AI agents that continuously assess real-time demand metrics and optimize resource distribution accordingly. By leveraging advanced algorithmic frameworks, CreditAI guarantees that users receive requisite computational power precisely when demanded.
+  where \( h_t \) is the hidden state at time \( t \), \( W_h \) is the weight matrix for the previous hidden state, \( W_x \) is the weight matrix for the input, \( x_t \) is the input at time \( t \), and \( b \) is the bias vector.
 
-## Dynamic Allocation Algorithm
+- **Reinforcement Learning**: Implements reinforcement learning algorithms such as Proximal Policy Optimization (PPO) to adapt strategies based on feedback from prior actions. This allows Pentheus to optimize decision-making dynamically over time.
 
-### Overview
-The dynamic allocation algorithm employs sophisticated machine learning models to predict demand trajectories for computational resources. This predictive capability facilitates proactive management of the resource pool, ensuring optimal utilization while minimizing latency.
+  \[
+  L^{CLIP}(\theta) = \mathbb{E}_t \left[ \min\left( r_t(\theta) \hat{A}_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A}_t\right) \right]
+  \]
 
-### Key Features
-- **Real-Time Demand Forecasting**: The algorithm harnesses historical usage data alongside current operational trends to generate accurate demand forecasts, employing techniques such as time series analysis and regression modeling.
+  where \( r_t(\theta) = \frac{\pi_\theta(a_t | s_t)}{\pi_{\theta_{old}}(a_t | s_t)} \), \( \hat{A}_t \) is the estimated advantage function, and \( \epsilon \) is a hyperparameter that controls the clipping range.
 
-- **Efficient Resource Distribution**: By anticipating demand fluctuations, the algorithm preemptively allocates resources, thereby reducing queuing delays for users and optimizing overall system performance metrics.
+### Scoring System
+The proprietary scoring system evaluates user profiles using a combination of machine learning techniques:
 
-## Conclusion
-CreditAI epitomizes a paradigm shift in the accessibility and utilization of computational resources within the digital economy. Through the integration of advanced AI agents into its architectural framework, CreditAI enhances operational efficiency while catalyzing innovation across diverse sectors. The platform's commitment to dynamic resource allocation ensures that users can effectively optimize their computational workflows, paving the
+- **Dynamic Risk Assessment**: Employs ensemble learning methods (e.g., Random Forests, Gradient Boosting) to analyze user transaction history, liquidity preferences, and market volatility. This generates real-time risk scores that inform investment decisions.
+
+  The risk score \( R_i \) for user \( i \) can be computed as follows:
+
+  \[
+  R_i = w_1 X_1 + w_2 X_2 + ... + w_n X_n
+  \]
+
+  where \( w_j \) represents the weight assigned to feature \( j \), and \( X_j \) represents the value of feature \( j\).
+
+- **Adaptive Learning Mechanism**: Utilizes unsupervised learning techniques such as K-means clustering to identify patterns in user behavior and adjust risk assessments dynamically based on emerging trends.
+
+### Algorithms
+MarbleAI integrates several advanced algorithms to facilitate comprehensive asset analysis and yield optimization:
+
+1. **Time Series Forecasting**: Implements ARIMA and LSTM models to analyze historical market trends and predict future price movements accurately.
+
+   The LSTM model's loss function can be defined as:
+
+   \[
+   L = -\frac{1}{N} \sum_{i=1}^{N} y_i \log(\hat{y}_i) + (1 - y_i)\log(1 - \hat{y}_i)
+   \]
+
+   where \( y_i \) is the true label and \( \hat{y}_i \) is the predicted label.
+
+2. **Anomaly Detection**: Uses techniques such as Isolation Forests to detect unusual patterns in transaction data that may indicate market shifts or risks.
+
+3. **Collaborative Filtering**: Applies user-based and item-based collaborative filtering methods to provide personalized investment recommendations based on similar user profiles.
+
+4. **Feature Engineering**: Employs automated feature selection techniques (e.g., Recursive Feature Elimination) to identify the most relevant variables influencing yield outcomes.
+
+## Installation
+
+To set up MarbleAI locally, follow these steps:
+
+1. Clone the repository:
