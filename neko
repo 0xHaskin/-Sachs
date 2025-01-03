@@ -8,10 +8,10 @@ use solana_program::{
 use arc_rig::{State, TokenAccount, Mint};
 
 // Define the program ID (replace with your actual program ID)
-solana_program::declare_id!("yanProgramIDXXXXXXXXXXXXXXXXXXXXXXXXXX");
+solana_program::declare_id!("nekoProgramIDXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
 #[derive(State)]
-pub struct yanState {
+pub struct nekoState {
     pub total_supply: u64,
     pub reflection_rate: u64,
 }
@@ -23,13 +23,13 @@ pub fn process_instruction(
     accounts: &[AccountInfo],
     instruction_data: &[u8],
 ) -> ProgramResult {
-    let instruction = yanInstruction::unpack(instruction_data)?;
+    let instruction = nekoInstruction::unpack(instruction_data)?;
 
     match instruction {
-        yanInstruction::InitializeToken => initialize_token(accounts, program_id),
-        yanInstruction::Mint { amount } => mint(accounts, amount),
-        yanInstruction::Transfer { amount } => transfer(accounts, amount),
-        yanInstruction::DistributeReflections => distribute_reflections(accounts),
+        nekoInstruction::InitializeToken => initialize_token(accounts, program_id),
+        nekoInstruction::Mint { amount } => mint(accounts, amount),
+        nekoInstruction::Transfer { amount } => transfer(accounts, amount),
+        nekoInstruction::DistributeReflections => distribute_reflections(accounts),
     }
 }
 
@@ -37,7 +37,7 @@ fn initialize_token(accounts: &[AccountInfo], program_id: &Pubkey) -> ProgramRes
     let state_account = &accounts[0];
     let mint_account = &accounts[1];
 
-    let mut state = yanState::unpack(&state_account.data.borrow())?;
+    let mut state = nekoState::unpack(&state_account.data.borrow())?;
     let mut mint = Mint::unpack(&mint_account.data.borrow())?;
 
     state.total_supply = 0;
@@ -45,10 +45,10 @@ fn initialize_token(accounts: &[AccountInfo], program_id: &Pubkey) -> ProgramRes
 
     mint.initialize(program_id, Some(&state_account.key))?;
 
-    yanState::pack(state, &mut state_account.data.borrow_mut())?;
+    nekoState::pack(state, &mut state_account.data.borrow_mut())?;
     Mint::pack(mint, &mut mint_account.data.borrow_mut())?;
 
-    msg!("yan token initialized");
+    msg!("neko token initialized");
     Ok(())
 }
 
@@ -57,18 +57,18 @@ fn mint(accounts: &[AccountInfo], amount: u64) -> ProgramResult {
     let mint_account = &accounts[1];
     let destination_account = &accounts[2];
 
-    let mut state = yanState::unpack(&state_account.data.borrow())?;
+    let mut state = nekoState::unpack(&state_account.data.borrow())?;
     let mut mint = Mint::unpack(&mint_account.data.borrow())?;
     let mut destination = TokenAccount::unpack(&destination_account.data.borrow())?;
 
     mint.mint(amount, &mut destination)?;
     state.total_supply += amount;
 
-    yanState::pack(state, &mut state_account.data.borrow_mut())?;
+    nekoState::pack(state, &mut state_account.data.borrow_mut())?;
     Mint::pack(mint, &mut mint_account.data.borrow_mut())?;
     TokenAccount::pack(destination, &mut destination_account.data.borrow_mut())?;
 
-    msg!("Minted {} yan tokens", amount);
+    msg!("Minted {} neko tokens", amount);
     Ok(())
 }
 
@@ -84,30 +84,30 @@ fn transfer(accounts: &[AccountInfo], amount: u64) -> ProgramResult {
     TokenAccount::pack(source, &mut source_account.data.borrow_mut())?;
     TokenAccount::pack(destination, &mut destination_account.data.borrow_mut())?;
 
-    msg!("Transferred {} yan tokens", amount);
+    msg!("Transferred {} neko tokens", amount);
     Ok(())
 }
 
 fn distribute_reflections(accounts: &[AccountInfo]) -> ProgramResult {
     let state_account = &accounts[0];
-    let mut state = yanState::unpack(&state_account.data.borrow())?;
+    let mut state = nekoState::unpack(&state_account.data.borrow())?;
 
     // Implement reflection distribution logic here
     msg!("Distributing reflections");
 
-    yanState::pack(state, &mut state_account.data.borrow_mut())?;
+    nekoState::pack(state, &mut state_account.data.borrow_mut())?;
     Ok(())
 }
 
 #[derive(Clone, Debug, PartialEq)]
-enum yanInstruction {
+enum nekoInstruction {
     InitializeToken,
     Mint { amount: u64 },
     Transfer { amount: u64 },
     DistributeReflections,
 }
 
-impl yanInstruction {
+impl nekoInstruction {
     fn unpack(input: &[u8]) -> Result<Self, ProgramError> {
         // Implement instruction unpacking logic here
         unimplemented!()
