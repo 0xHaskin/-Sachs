@@ -1,65 +1,55 @@
-# 妍妍 (Yányán): Solana上首个奖励分发的AI代理
+# NekoAI: Technical Architecture Overview
 
-![yanmide](https://github.com/user-attachments/assets/cc83c852-7885-455e-bfc4-b994cbcdbce0)
+![nekomid](https://github.com/user-attachments/assets/570932f8-11c2-4374-93c7-40fb9a7c4217)
 
-## 概述
+## Autonomous Operation
 
-妍妍是Solana区块链上的一个自主AI代理，为用户在X平台 上的互动提供奖励。
+NekoAI is engineered for full autonomy in user interaction and reward distribution, leveraging advanced AI methodologies. The core functionalities include:
 
-## 核心机制
+### Real-time Interaction Processing
 
-- 实时互动处理
-- NLP驱动的评估
-- Solana区块链集成
-- 毫秒级代币分发
+- **Natural Language Processing (NLP)**: NekoAI employs state-of-the-art NLP techniques, including transformer-based architectures (e.g., BERT, GPT-3) for semantic understanding and context extraction. This allows for:
+  - **Tokenization**: Utilizing subword tokenization (e.g., Byte Pair Encoding) to break down user input into manageable units while preserving semantic meaning.
+  - **Entity Recognition**: Implementing Named Entity Recognition (NER) using Conditional Random Fields (CRFs) and deep learning models to identify and classify key components of user messages.
+  - **Contextual Embeddings**: Leveraging contextual embeddings from transformer models to capture nuanced meanings of words based on their surrounding context in conversation.
 
-## 独特特性
+### Token Management
 
-- 自主钱包控制
-- 自决定代币奖励
-- 严格的互动资格标准
+- **Autonomous Wallet Control**: NekoAI utilizes a decentralized wallet management system, implementing:
+  - **Smart Contracts**: Developed in Rust or Solidity, these contracts govern token distribution logic, ensuring secure and transparent transactions through mechanisms such as:
+    - **Multi-signature Transactions**: Requiring multiple approvals for high-value transfers to enhance security.
+  - **Automated Airdrop Mechanisms**: Functions that trigger periodic token distributions based on engagement metrics, utilizing event-driven programming paradigms.
 
-### 资格要求
+## AI Technologies
 
-- 至少5次互动才能获得资格
-- 每天至少1次互动
-- AI驱动的价值评估
+### Natural Language Understanding (NLU)
 
-## 奖励等级
+- NekoAI utilizes advanced NLU frameworks to interpret user commands with high accuracy. Key components include:
+  - **Intent Recognition**: Implementing deep learning classifiers (e.g., LSTM, CNN) trained on annotated datasets to classify user inputs into predefined categories (e.g., `/feed`, `/pet`).
+  - **Sentiment Analysis**: Employing ensemble methods combining lexicon-based approaches with machine learning classifiers (e.g., XGBoost) to gauge the emotional tone of user interactions.
 
-### 社交媒体互动
-| 互动类型 | $YANYAN 代币 |
-|--------|--------------|
-| 评论 | 100-500 |
-| 转发 | 250-750 |
-| 引用推文 | 1000-5000 |
-| 回复 | 150-600 |
+### Reinforcement Learning
 
-### 内容创作
-| 内容类型 | $YANYAN 代币 |
-|---------|--------------|
-| 推文串 | 2000-10000 |
-| 原创推文 | 500-2500 |
-| 病毒式传播潜力 | 额外奖励 |
+- NekoAI incorporates reinforcement learning principles to optimize its interaction strategies:
+  - **Reward Mechanism**: Utilizing a reward shaping technique to assign rewards based on user engagement outcomes, allowing the model to learn effective communication tactics over time.
+  - **Policy Gradient Methods**: Implementing advanced algorithms such as Proximal Policy Optimization (PPO) and Actor-Critic methods to refine response generation based on feedback loops from user interactions.
 
-## AI评估标准
+### Dynamic Response Generation
 
-- 内容相关性
-- 原创性
-- 互动潜力
-- 互动深度
+- Leveraging generative models, NekoAI can produce contextually relevant responses tailored to individual users:
+  - **Seq2Seq Architectures**: Utilizing attention mechanisms within encoder-decoder frameworks to generate coherent and context-aware replies.
+  - **Fine-Tuning Pre-trained Models**: Adapting models on domain-specific datasets using techniques such as transfer learning to enhance relevance and engagement.
 
-## 技术栈
+### Anomaly Detection
 
-- 编程语言：Rust
-- 区块链：Solana
-- AI模型：微调的BERT
-- 智能合约：Anchor框架
+- Advanced anomaly detection algorithms monitor interactions for unusual patterns:
+  - **Statistical Methods**: Employing multivariate statistical techniques such as Principal Component Analysis (PCA) to identify outliers in interaction data.
+  - **Machine Learning Approaches**: Training unsupervised models like Isolation Forests and One-Class SVMs to detect potential abuse or manipulation in user interactions.
 
-## 许可证
+## Security Measures
 
-MIT许可证
+### Anomaly Detection
 
-## 贡献
-
-欢迎贡献！请阅读我们的贡献指南。
+- Advanced anomaly detection algorithms monitor interactions for unusual patterns:
+  - **Statistical Methods**: Employing multivariate statistical techniques such as Principal Component Analysis (PCA) to identify outliers in interaction data.
+  - **Machine Learning Approaches**: Training unsupervised models like Isolation Forests and One-Class SVMs to detect potential abuse or manipulation in user interactions.
