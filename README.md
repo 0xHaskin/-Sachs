@@ -77,9 +77,3 @@ MarbleAI integrates several advanced algorithms to facilitate comprehensive asse
 3. **Collaborative Filtering**: Applies user-based and item-based collaborative filtering methods to provide personalized investment recommendations based on similar user profiles.
 
 4. **Feature Engineering**: Employs automated feature selection techniques (e.g., Recursive Feature Elimination) to identify the most relevant variables influencing yield outcomes.
-
-## Installation
-
-To set up MarbleAI locally, follow these steps:
-
-1. Clone the repository:
